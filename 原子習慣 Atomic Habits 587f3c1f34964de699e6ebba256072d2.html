@@ -1,0 +1,637 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>原子習慣 Atomic Habits</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="587f3c1f-3496-4de6-99e6-ebba256072d2" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🦠</span></div><h1 class="page-title">原子習慣 Atomic Habits</h1><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Author</th><td><span class="selected-value select-value-color-brown">James Clear</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Category</th><td><span class="selected-value select-value-color-yellow">成功法</span><span class="selected-value select-value-color-yellow">生活指導</span><span class="selected-value select-value-color-red">習慣</span></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Publisher</th><td><span class="selected-value select-value-color-blue">方智</span></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M10.8889,5.5 L3.11111,5.5 L3.11111,7.05556 L10.8889,7.05556 L10.8889,5.5 Z M12.4444,1.05556 L11.6667,1.05556 L11.6667,0 L10.1111,0 L10.1111,1.05556 L3.88889,1.05556 L3.88889,0 L2.33333,0 L2.33333,1.05556 L1.55556,1.05556 C0.692222,1.05556 0.00777777,1.75556 0.00777777,2.61111 L0,12.5 C0,13.3556 0.692222,14 1.55556,14 L12.4444,14 C13.3,14 14,13.3556 14,12.5 L14,2.61111 C14,1.75556 13.3,1.05556 12.4444,1.05556 Z M12.4444,12.5 L1.55556,12.5 L1.55556,3.94444 L12.4444,3.94444 L12.4444,12.5 Z M8.55556,8.61111 L3.11111,8.61111 L3.11111,10.1667 L8.55556,10.1667 L8.55556,8.61111 Z"></path></svg></span>Publishing/Release Date</th><td><time>@June 1, 2019</time></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Quotes</th><td>細微改變帶來巨大成就的實證法則</td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Score /5</th><td><span class="selected-value select-value-color-default">⭐️⭐️⭐️⭐️⭐️</span></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Status</th><td><span class="selected-value select-value-color-blue">Finished</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Summary</th><td>每天都進步 1 %，一年後，你會進步 37 倍；每天都退步 1 %，一年後，你會弱化到趨近於 0！你的一點小改變，將會產生複利效應，如滾雪球般，帶來豐碩的人生成果！</td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Type</th><td><span class="selected-value select-value-color-default">Article</span></td></tr></tbody></table></header><div class="page-body"><h1 id="7beb198f-b5f7-4be3-8e62-883f32e71732" class="block-color-blue_background"><mark class="highlight-orange">The book in 3 Sentences</mark></h1><p id="6a408ea6-3b16-499a-9757-22ee967e2c61" class="">
+</p><h2 id="51eee6a7-fb82-43a0-863e-63f3d4ba5ea7" class=""><mark class="highlight-orange">Information from the book</mark></h2><figure id="c36c4c92-44c4-4eef-bc88-14e18a8bbbf4" class="link-to-page"><a href="%E5%8E%9F%E5%AD%90%E7%BF%92%E6%85%A3%20Atomic%20Habits%20587f3c1f34964de699e6ebba256072d2/01%20%E5%8E%9F%E5%AD%90%E7%BF%92%E6%85%A3%E7%9A%84%E9%A9%9A%E4%BA%BA%E5%8A%9B%E9%87%8F%20c36c4c9244c44eefbc8814e18a8bbbf4.html">01 原子習慣的驚人力量</a></figure><figure id="ccd19228-5226-4816-b94e-b7b317a867af" class="link-to-page"><a href="%E5%8E%9F%E5%AD%90%E7%BF%92%E6%85%A3%20Atomic%20Habits%20587f3c1f34964de699e6ebba256072d2/02%20%E6%94%B9%E8%AE%8A%E7%BF%92%E6%85%A3%E6%9C%80%E6%9C%89%E6%95%88%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%8C%E6%98%AF%E6%94%B9%E8%AE%8A%E8%BA%AB%E5%88%86%E8%AA%8D%E5%90%8C%20ccd1922852264816b94eb7b317a867af.html">02 改變習慣最有效的方法，是改變身分認同</a></figure><figure id="790cbebe-7a55-46a8-85e8-a0b2e489a8ba" class="link-to-page"><a href="%E5%8E%9F%E5%AD%90%E7%BF%92%E6%85%A3%20Atomic%20Habits%20587f3c1f34964de699e6ebba256072d2/03%20%E5%9B%9B%E5%80%8B%E7%B0%A1%E5%96%AE%E7%9A%84%E6%AD%A5%E9%A9%9F%20790cbebe7a5546a885e8a0b2e489a8ba.html"><span class="icon">⛪</span>03 四個簡單的步驟</a></figure><figure id="d36e70f0-8610-4145-a770-f9708d33f845" class="link-to-page"><a href="%E5%8E%9F%E5%AD%90%E7%BF%92%E6%85%A3%20Atomic%20Habits%20587f3c1f34964de699e6ebba256072d2/04%20%E8%A1%8C%E7%82%BA%E6%94%B9%E8%AE%8A%E7%9A%84%E9%81%8E%E7%A8%8B%E5%A7%8B%E6%96%BC%E8%A6%BA%E5%AF%9F%20d36e70f086104145a770f9708d33f845.html">04 行為改變的過程始於覺察</a></figure><figure id="60e1dc4b-5972-4b2d-beee-3f5e2d3b8873" class="link-to-page"><a href="%E5%8E%9F%E5%AD%90%E7%BF%92%E6%85%A3%20Atomic%20Habits%20587f3c1f34964de699e6ebba256072d2/05%20%E9%96%8B%E5%A7%8B%E4%B8%80%E5%80%8B%E6%96%B0%E7%BF%92%E6%85%A3%E6%9C%80%E5%A5%BD%E7%9A%84%E6%96%B9%E6%B3%95%2060e1dc4b59724b2dbeee3f5e2d3b8873.html">05 開始一個新習慣最好的方法</a></figure><figure id="0426420c-e232-46ba-b6e4-81d150014d65" class="link-to-page"><a href="%E5%8E%9F%E5%AD%90%E7%BF%92%E6%85%A3%20Atomic%20Habits%20587f3c1f34964de699e6ebba256072d2/06%20%E6%BF%80%E5%8B%B5%E8%A2%AB%E9%AB%98%E4%BC%B0%E4%BA%86%EF%BC%8C%E7%92%B0%E5%A2%83%E5%BE%80%E5%BE%80%E6%9B%B4%E9%87%8D%E8%A6%81%200426420ce23246bab6e481d150014d65.html">06 激勵被高估了，環境往往更重要</a></figure><figure id="6e7d5424-f155-4398-a55f-e90f563cfcda" class="link-to-page"><a href="%E5%8E%9F%E5%AD%90%E7%BF%92%E6%85%A3%20Atomic%20Habits%20587f3c1f34964de699e6ebba256072d2/07%20%E8%87%AA%E5%88%B6%E5%8A%9B%E7%9A%84%E7%A7%98%E5%AF%86%206e7d5424f1554398a55fe90f563cfcda.html">07 自制力的秘密</a></figure><figure id="b3d6f278-b9ac-4fbb-9a00-6d4226604532" class="link-to-page"><a href="%E5%8E%9F%E5%AD%90%E7%BF%92%E6%85%A3%20Atomic%20Habits%20587f3c1f34964de699e6ebba256072d2/08%20%E5%A6%82%E4%BD%95%E8%AE%93%E7%BF%92%E6%85%A3%E8%AE%8A%E5%BE%97%E9%9B%A3%E4%BB%A5%E6%8A%97%E6%8B%92%20b3d6f278b9ac4fbb9a006d4226604532.html">08 如何讓習慣變得難以抗拒</a></figure><figure id="43680b59-4ce7-4ee1-ba8e-a33c227c4b5d" class="link-to-page"><a href="%E5%8E%9F%E5%AD%90%E7%BF%92%E6%85%A3%20Atomic%20Habits%20587f3c1f34964de699e6ebba256072d2/09%20%E5%AE%B6%E4%BA%BA%E8%88%87%E6%9C%8B%E5%8F%8B%E5%A6%82%E4%BD%95%E5%BD%A2%E5%A1%91%E4%BD%A0%E7%9A%84%E7%BF%92%E6%85%A3%2043680b594ce74ee1ba8ea33c227c4b5d.html">09 家人與朋友如何形塑你的習慣</a></figure><figure id="118d7409-b559-4350-a711-e5550e7c6ef4" class="link-to-page"><a href="%E5%8E%9F%E5%AD%90%E7%BF%92%E6%85%A3%20Atomic%20Habits%20587f3c1f34964de699e6ebba256072d2/10%20%E5%A6%82%E4%BD%95%E6%89%BE%E5%87%BA%E4%B8%A6%E8%A7%A3%E6%B1%BA%E5%A3%9E%E7%BF%92%E6%85%A3%20118d7409b5594350a711e5550e7c6ef4.html">10 如何找出並解決壞習慣</a></figure><figure id="51e1f305-5fb4-4f48-a0f4-8ed9c0a46f1c" class="link-to-page"><a href="%E5%8E%9F%E5%AD%90%E7%BF%92%E6%85%A3%20Atomic%20Habits%20587f3c1f34964de699e6ebba256072d2/11%20%E7%B2%BE%E9%80%9A%E7%BF%92%E6%85%A3%E7%94%B1%E9%87%8D%E8%A4%87%E9%96%8B%E5%A7%8B%EF%BC%8C%E8%80%8C%E9%9D%9E%E5%AE%8C%E7%BE%8E%2051e1f3055fb44f48a0f48ed9c0a46f1c.html">11 精通習慣由重複開始，而非完美</a></figure><figure id="fd8e0dac-0709-4cb1-b473-7d9cde713d48" class="link-to-page"><a href="%E5%8E%9F%E5%AD%90%E7%BF%92%E6%85%A3%20Atomic%20Habits%20587f3c1f34964de699e6ebba256072d2/12%20%E6%9C%80%E5%B0%8F%E5%8A%AA%E5%8A%9B%E5%8E%9F%E5%89%87%20fd8e0dac07094cb1b4737d9cde713d48.html">12 最小努力原則</a></figure><figure id="c2547b6a-3c27-437c-a1e4-623f1282c3d7" class="link-to-page"><a href="%E5%8E%9F%E5%AD%90%E7%BF%92%E6%85%A3%20Atomic%20Habits%20587f3c1f34964de699e6ebba256072d2/13%20%E5%A6%82%E4%BD%95%E9%81%8B%E7%94%A8%E3%80%8C%E5%85%A9%E5%88%86%E9%90%98%E6%B3%95%E5%89%87%E3%80%8D%E5%81%9C%E6%AD%A2%E6%8B%96%E5%BB%B6%20c2547b6a3c27437ca1e4623f1282c3d7.html">13 如何運用「兩分鐘法則」停止拖延</a></figure><figure id="7dcb96a7-736a-4c94-b068-58ab7da04390" class="link-to-page"><a href="%E5%8E%9F%E5%AD%90%E7%BF%92%E6%85%A3%20Atomic%20Habits%20587f3c1f34964de699e6ebba256072d2/14%20%E5%A6%82%E4%BD%95%E8%AE%93%E5%A5%BD%E7%BF%92%E6%85%A3%E8%AE%8A%E5%BE%97%E7%84%A1%E5%8F%AF%E9%81%BF%E5%85%8D%EF%BC%8C%E8%AE%93%E5%A3%9E%E7%BF%92%E7%AE%A1%E4%B8%8D%E5%8F%AF%E8%83%BD%E7%99%BC%E7%94%9F%207dcb96a7736a4c94b06858ab7da04390.html">14 如何讓好習慣變得無可避免，讓壞習管不可能發生</a></figure><figure id="08fdc132-3836-4abe-8614-90b0b75e5a92" class="link-to-page"><a href="%E5%8E%9F%E5%AD%90%E7%BF%92%E6%85%A3%20Atomic%20Habits%20587f3c1f34964de699e6ebba256072d2/15%20%E8%A1%8C%E7%82%BA%E6%94%B9%E8%AE%8A%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%B3%95%E5%89%87%2008fdc13238364abe861490b0b75e5a92.html">15 行為改變的基本法則</a></figure><figure id="0e30e557-0a44-4091-8a18-cdb424b342c7" class="link-to-page"><a href="%E5%8E%9F%E5%AD%90%E7%BF%92%E6%85%A3%20Atomic%20Habits%20587f3c1f34964de699e6ebba256072d2/16%20%E5%A6%82%E4%BD%95%E6%AF%8F%E5%A4%A9%E5%A0%85%E6%8C%81%E5%A5%BD%E7%BF%92%E6%85%A3%200e30e5570a4440918a18cdb424b342c7.html">16 如何每天堅持好習慣</a></figure><figure id="bd46227c-0100-4f9a-97df-20b297393a07" class="link-to-page"><a href="%E5%8E%9F%E5%AD%90%E7%BF%92%E6%85%A3%20Atomic%20Habits%20587f3c1f34964de699e6ebba256072d2/17%20%E5%95%8F%E8%B2%AC%E5%A4%A5%E4%BC%B4%E4%BD%9C%E7%94%A8%E5%A4%A7%20bd46227c01004f9a97df20b297393a07.html">17 問責夥伴作用大</a></figure><figure id="4bd7930a-873e-4095-ae2e-bfb908a33467" class="link-to-page"><a href="%E5%8E%9F%E5%AD%90%E7%BF%92%E6%85%A3%20Atomic%20Habits%20587f3c1f34964de699e6ebba256072d2/18%20%E5%9F%BA%E5%9B%A0%E5%A6%82%E4%BD%95%E5%BD%B1%E9%9F%BF%E7%BF%92%E6%85%A3%E7%9A%84%E9%A4%8A%E6%88%90%204bd7930a873e4095ae2ebfb908a33467.html">18 基因如何影響習慣的養成</a></figure><figure id="e5995935-8b0e-4ea3-87f3-164cd8a8f1f6" class="link-to-page"><a href="%E5%8E%9F%E5%AD%90%E7%BF%92%E6%85%A3%20Atomic%20Habits%20587f3c1f34964de699e6ebba256072d2/19%20%E9%87%91%E9%AB%AE%E5%A5%B3%E5%AD%A9%E5%8E%9F%E5%89%87%EF%BC%9A%E5%A6%82%E4%BD%95%E5%9C%A8%E7%94%9F%E6%B4%BB%E8%88%87%E5%B7%A5%E4%BD%9C%E4%B8%AD%E7%B6%AD%E6%8C%81%E5%8B%95%E5%8A%9B%20e59959358b0e4ea387f3164cd8a8f1f6.html">19 金髮女孩原則：如何在生活與工作中維持動力</a></figure><figure id="25e989d6-10cc-4be4-acae-6e57d656472c" class="link-to-page"><a href="%E5%8E%9F%E5%AD%90%E7%BF%92%E6%85%A3%20Atomic%20Habits%20587f3c1f34964de699e6ebba256072d2/20%20%E5%BB%BA%E7%AB%8B%E5%A5%BD%E7%BF%92%E6%85%A3%E7%9A%84%E5%A3%9E%E8%99%95%2025e989d610cc4be4acae6e57d656472c.html">20 建立好習慣的壞處</a></figure><figure id="0ba36513-dd56-412e-8ae4-b9fa3f450bba" class="link-to-page"><a href="%E5%8E%9F%E5%AD%90%E7%BF%92%E6%85%A3%20Atomic%20Habits%20587f3c1f34964de699e6ebba256072d2/Final%20%E8%AE%93%E6%88%90%E6%9E%9C%E6%B0%B8%E7%BA%8C%E7%9A%84%E7%A7%98%E8%A8%A3%200ba36513dd56412e8ae4b9fa3f450bba.html">Final 讓成果永續的秘訣</a></figure><h2 id="98f8ca78-94c9-46d3-a37d-db04e1f53d5a" class=""><mark class="highlight-blue">How I Discovered It?</mark></h2><p id="b98ae757-1680-4e6f-9435-43480619d02d" class="">從線上書店與實體書店的排行榜得知，因排行榜上很久，覺得有一定的原因，因此買來閱讀。</p><h2 id="8041c51b-7cc7-45c7-babe-0d0e03cb76df" class="">Who Should Read It?</h2><p id="8a4ded8b-a256-4e78-a478-5d59c390c146" class="">任何想戒除壞習慣，培養好習慣的人都適合閱讀一本書，或是想增進自己來在原本的習慣上增進的專業人士。</p><h1 id="8e99ff31-81fb-407f-974e-b64051dd1967" class="block-color-yellow"><mark class="highlight-red">How the Book Changed Me？</mark></h1><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="f0974f62-8de1-4d63-819a-fd73e7f1d94e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">How my life / behavior / thoughts / ideas have changed as a result of reading the book</div></figure><p id="4dcdb9d8-8afc-4ff1-be9a-869de0b91dc4" class="">在枯燥乏味的陳舊習慣上可以做一些增進一些好習慣精進的方法，在未來在想做的事情上於制定的程序中可以做些於例行程序中能增進自身快樂的方式。在快樂的學習中，能使大腦學習較愉快，在執行的過程中也比較不會感覺到困難重重。容易執行的行為，容易養成習慣。在想改變目前行為可以藉由執行過程的難易度來培養好習慣、戒除壞習慣。在將來想做好一些事情可以藉由書中系統化的執行，使執行好習慣的過便的簡單。</p><h1 id="e34aaada-9a6c-4cbe-9f93-222eaf581dd6" class=""><mark class="highlight-purple">My Top 3 Quotes</mark></h1><h2 id="5633a477-1e2f-474d-be46-7b72e125abcb" class=""></h2><h2 id="254d92c9-ad90-4c2a-ab6c-02ec9a5ace76" class=""><mark class="highlight-yellow">Famous Sayings</mark></h2><ol type="1" id="4282b685-aae6-445d-88a0-b030af216b0c" class="numbered-list" start="1"><li>社會改革家雅各·里斯：「當一切努力看似無用，我會去看石匠敲打石頭。可能敲了一百下，石頭上連一條裂縫都沒有，但就在第一百零一下，石頭裂為兩半。然後我了解到，把石頭劈成兩半的不是最後那一下，而是先前的每一次敲擊。」</li></ol></div></article></body></html>
